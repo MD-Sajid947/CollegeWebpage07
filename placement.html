@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCMS Placements - Career Opportunities</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #e74c3c;
+            --accent-color: #f39c12;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 10px auto;
+        }
+        
+        /* Header Styles */
+         header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            /* background-color: red; */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .logo-text span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--secondary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        /* Hero Section */
+        .hero {
+            margin-top: 10%;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        /* Recruiters Section */
+        .recruiters {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+        
+        .recruiter-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .recruiter-logo {
+            width: 150px;
+            height: 80px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .recruiter-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial {
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--secondary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Placement Process */
+        .process {
+            padding: 80px 0;
+            background: var(--light-color);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 40px auto 0;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30px;
+            height: 100%;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .step {
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        
+        .step-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* Contact Form */
+        .contact {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: var(--light-color);
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .recruiter-logos {
+                gap: 15px;
+            }
+            
+            .recruiter-logo {
+                width: 120px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 80px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .recruiter-logo {
+                width: 100px;
+            }
+            
+            .process-steps::before {
+                left: 25px;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <p><i class="fas fa-phone"></i> +91 1234567890 | <i class="fas fa-envelope"></i> info@GCMS.edu</p>
+                <div class="social-links">
+                    <a target="_blank" href="https://www.facebook.com/GeorgeGroupOfCollegesOfficial"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/georgegroupofcollegesofficial/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/georgegroupofcollegesofficial/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/channel/UC14mp0zdKk0LsWsY_TAVvQg"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="main-nav">
+                <div class="logo">
+                    <img src="img/logo.png" alt="University Logo">
+                    <div class="logo-text">
+                        <h1><span>GCMS</span></h1>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a target="_blank" href="home.html">HOME</a></li>
+                    <li><a target="_blank" href="about us.html">ABOUT US</a></li>
+                    <li><a target="_blank" href="Courses.html">COURSES</a></li>
+                    <li><a target="_blank" href="events.html">EVENTES</a></li>
+                    <li><a target="_blank" href="location.html">LOCATION</a></li>
+                    <li><a target="_blank" href="placement.html">PLACEMENT</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Launch Your Career With Us</h1>
+            <p>Our college has a proven track record of placing students in top companies worldwide. With dedicated career services and strong industry connections, we help you achieve your professional goals.</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <h2 class="section-title">Placement Statistics</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="placedStudents">0</div>
+                    <div class="stat-label">Students Placed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="highestPackage">0</div>
+                    <div class="stat-label">Highest Package (LPA)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="averagePackage">0</div>
+                    <div class="stat-label">Average Package (LPA)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="recruitersCount">0</div>
+                    <div class="stat-label">Recruiting Companies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recruiters Section -->
+    <section class="recruiters" id="recruiters">
+        <div class="container">
+            <h2 class="section-title">Our Top Recruiters</h2>
+            <div class="recruiter-logos">
+                <img src="img/Samsung-logo.png" alt="Samsung" class="recruiter-logo">
+                <img src="img/mahindra logo.png" alt="mahindra" class="recruiter-logo">
+                <img src="img/coca cola india logo.jpg" alt="Coca-cola india" class="recruiter-logo">
+                <img src="https://logo.clearbit.com/tcs.com" alt="TCS" class="recruiter-logo">
+                <img src="img/HDFC-Life-Logo.png" alt="Hdfc life" class="recruiter-logo">
+                <img src="img/Apollo_Hospitals_Logo.png" alt="Apollo hospitals" class="recruiter-logo">
+                <img src="https://logo.clearbit.com/ibm.com" alt="IBM" class="recruiter-logo">
+                <img src="img/fortis logo.png" alt="Fortis" class="recruiter-logo">
+                <img src="https://logo.clearbit.com/wipro.com" alt="Wipro" class="recruiter-logo">
+                <img src="img/ananda logo.png" alt="Ananda" class="recruiter-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Student Success Stories</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>The placement cell provided excellent training sessions that helped me crack the interview at Google. The mock interviews were especially helpful in building my confidence.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya Sharma" class="author-img">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Software Engineer, Google</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>I received multiple offers thanks to the university's strong industry connections. The career guidance sessions helped me choose the best opportunity for my career growth.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul Patel" class="author-img">
+                        <div class="author-info">
+                            <h4>Rahul Patel</h4>
+                            <p>Data Scientist, Amazon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>The soft skills training organized by the placement cell made a huge difference in my interview performance. I'm grateful for the personalized attention I received.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anjali Gupta" class="author-img">
+                        <div class="author-info">
+                            <h4>Anjali Gupta</h4>
+                            <p>Product Manager, Microsoft</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Process -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title">Our Placement Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Registration & Profile Creation</h3>
+                        <p>Students register with the placement cell and create their professional profiles highlighting skills, projects, and achievements.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Training & Preparation</h3>
+                        <p>Comprehensive training including technical skills, aptitude tests, group discussions, and mock interviews.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Company Presentations</h3>
+                        <p>Recruiters visit campus to present their company profiles, job roles, and expectations to students.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Application & Shortlisting</h3>
+                        <p>Students apply to companies of their choice and companies shortlist candidates based on profiles.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Selection Process</h3>
+                        <p>Companies conduct tests, interviews, and other evaluation methods to select candidates.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Offer & Onboarding</h3>
+                        <p>Selected students receive offers and are guided through the onboarding process by the placement cell.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Placement Cell</h2>
+            <form class="contact-form" id="placementForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="program">Program of Study</label>
+                    <select id="program" name="program" required>
+                        <option value="">Select your program</option>
+                        <option value="btech">B.Tech</option>
+                        <option value="mtech">M.Tech</option>
+                        <option value="mba">MBA</option>
+                        <option value="bsc">B.Sc</option>
+                        <option value="msc">M.Sc</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year of Study</label>
+                    <select id="year" name="year" required>
+                        <option value="">Select year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                        <option value="5">5th Year</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>GEORGE COLLEGE OF MANAGEMENT & SCIENCE is a premier institution dedicated to academic excellence, innovation, and community engagement since 1985.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/GeorgeGroupOfCollegesOfficial"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/georgegroupofcollegesofficial/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/georgegroupofcollegesofficial/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UC14mp0zdKk0LsWsY_TAVvQg"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="about us.html">ABOUT US</a></li>
+                        <li><a href="Courses.html">COURSES</a></li>
+                        <li><a href="events.html">EVENTS</a></li>
+                        <li><a href="location.html">LOCATION</a></li>
+                        <li><a href="placement.html">PLACEMENT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Programs</h3>
+                    <ul class="footer-links">
+                        <li><a href="bba.html">BBA</a></li>
+                        <li><a href="bca.html">BCA</a></li>
+                        <li><a href="b.optom.html">B.OPTOM</a></li>
+                        <li><a href="bhm.html">BHM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 University Avenue, Tech City, TC 12345</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 1234567890</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@GCMS.edu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GEORGE COLLEGE OF MANAGEMENT & SCIENCE. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Counter Animation for Stats
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = value;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Start counters when stats section comes into view
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue('placedStudents', 0, 1250, 2000);
+                    animateValue('highestPackage', 0, 42, 2000);
+                    animateValue('averagePackage', 0, 8.5, 2000);
+                    animateValue('recruitersCount', 0, 210, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+
+        observer.observe(statsSection);
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('nav ul');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navMenu.style.display = 'none';
+                }
+            });
+        });
+
+        // Form Submission
+        const placementForm = document.getElementById('placementForm');
+        
+        placementForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you, ${name}! We've received your message and will contact you at ${email} shortly.`);
+            
+            // Reset form
+            placementForm.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Adjust mobile menu display on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

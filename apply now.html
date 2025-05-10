@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | College Name</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Global Styles */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Application Form */
+        .application-section {
+            padding: 60px 0;
+        }
+
+        .application-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #003366;
+            font-size: 2rem;
+        }
+
+        .application-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #003366;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #003366;
+            outline: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-option input {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .submit-btn {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 30px auto 0;
+            width: 200px;
+        }
+
+        .submit-btn:hover {
+            background-color: #002244;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        .success-message h2 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            margin-bottom: 20px;
+        }
+
+        .success-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">GCMS</div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about us.html">ABOUT US</a></li>
+                    <li><a href="Courses.html">COURSES</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="location.html">LOCATION</a></li>
+                    <li><a href="placement.html">PLACEMENT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Apply to GEORGE COLLEGE OF MANAGEMENT & SCIENCE</h1>
+            <p>Begin your journey to academic excellence. Fill out our simple application form to take the first step toward your future.</p>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="application-section">
+        <div class="container">
+            <h2>Application Form</h2>
+            
+            <!-- Success Message (hidden by default) -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">✓</div>
+                <h2>Application Submitted Successfully!</h2>
+                <p>Thank you for applying to College Name. We've received your application and will review it shortly.</p>
+                <p>You will receive a confirmation email with further instructions within 48 hours.</p>
+            </div>
+
+            <!-- Application Form -->
+            <form id="applicationForm" class="application-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name*</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name*</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="number" id="Pin" name="Pin" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dob">Date of Birth*</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender*</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Street Address*</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City*</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State*</label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Pin">Pin Code*</label>
+                        <input type="number" id="Pin" name="Pin" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country*</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="IN">India</option>
+                        <option value="AU">Australia</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="program">Program of Interest*</label>
+                    <select id="program" name="program" required>
+                        <option value="">Select Program</option>
+                        <option value="bba">Bachelor of Business Administration(BBA)</option>
+                        <option value="bca">Bachelor of Computer Applications(BCA)</option>
+                        <option value="b.optom">Bachelor of Optometry(B.OPTOM)</option>
+                        <option value="bhm">Bachelor of Hotel Management(BHM)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="education">Highest Education Level*</label>
+                    <select id="education" name="education" required>
+                        <option value="">Select Education Level</option>
+                        <option value="highschool">High School</option>
+                        <option value="associate">Associate Degree</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="essay">Personal Statement*</label>
+                    <textarea id="essay" name="essay" rows="6" required placeholder="Tell us about your academic interests, goals, and why you want to join our college (500-1000 words)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="agree" required> I certify that all information provided is accurate and complete.*
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>GEORGE COLLEGE OF MANAGEMENT & SCIENCE is a premier institution dedicated to academic excellence, innovation, and community engagement since 1985.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/GeorgeGroupOfCollegesOfficial"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/georgegroupofcollegesofficial/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/georgegroupofcollegesofficial/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UC14mp0zdKk0LsWsY_TAVvQg"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a target="_blank" href="home.html">HOME</a></li>
+                        <li><a target="_blank" href="about us.html">ABOUT US</a></li>
+                        <li><a target="_blank" href="Courses.html">COURSES</a></li>
+                        <li><a target="_blank" href="events.html">EVENTS</a></li>
+                        <li><a target="_blank" href="location.html">LOCATION</a></li>
+                        <li><a target="_blank" href="placement.html">PLACEMENT</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Programs</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Undergraduate</a></li>
+                        <li><a href="#">Graduate</a></li>
+                        <li><a href="#">Professional Certificates</a></li>
+                        <li><a href="#">Online Learning</a></li>
+                        <li><a href="#">Summer Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 University Avenue, Tech City, TC 12345</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 1234567890</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@GCMS.edu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GEORGE COLLEGE OF MANAGEMENT & SCIENCE. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const applicationForm = document.getElementById('applicationForm');
+            const successMessage = document.getElementById('successMessage');
+
+            applicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real application, you would send the form data to a server here
+                // For this example, we'll just simulate a successful submission
+                
+                // Hide the form
+                applicationForm.style.display = 'none';
+                
+                // Show the success message
+                successMessage.style.display = 'block';
+                
+                // Scroll to the success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+                
+                // In a real application, you might want to reset the form after submission
+                // applicationForm.reset();
+                
+                console.log('Form submitted successfully!');
+                // Here you would typically have an AJAX call to your backend
+                // For example:
+                /*
+                const formData = new FormData(applicationForm);
+                fetch('/submit-application', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        applicationForm.style.display = 'none';
+                        successMessage.style.display = 'block';
+                    } else {
+                        alert('There was an error submitting your application. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error submitting your application. Please try again.');
+                });
+                */
+            });
+            
+            // Add some basic form validation
+            const requiredFields = document.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.style.borderColor = 'red';
+                    } else {
+                        this.style.borderColor = '#ddd';
+                    }
+                });
+            });
+            
+            // Phone number formatting (US format example)
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', function(e) {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+            });
+        });
+    </script>
+</body>
+</html>

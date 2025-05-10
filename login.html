@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Portal - Login</title>
+    <style>
+        /* CSS Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            max-width: 90%;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2c3e50;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .user-type {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .user-option {
+            flex: 1;
+            text-align: center;
+        }
+
+        .user-option input {
+            display: none;
+        }
+
+        .user-option label {
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        .user-option input:checked + label {
+            background-color: #3498db;
+            color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        .forgot-password {
+            margin-top: 15px;
+            display: block;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            
+            .user-type {
+                flex-direction: column;
+            }
+            
+            .user-option {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="img/logo.png" alt="College Logo" class="logo">
+        <h1>College Portal Login</h1>
+        
+        <form id="loginForm">
+            <div class="user-type">
+                <div class="user-option">
+                    <input type="radio" id="student" name="userType" value="student" checked>
+                    <label for="student">Student</label>
+                </div>
+                <div class="user-option">
+                    <input type="radio" id="faculty" name="userType" value="faculty">
+                    <label for="faculty">Faculty</label>
+                </div>
+                <div class="user-option">
+                    <input type="radio" id="admin" name="userType" value="admin">
+                    <label for="admin">Admin</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Username/Email</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            
+            <div class="error-message" id="errorMessage"></div>
+            
+            <button type="submit">Login</button>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </form>
+        
+        <div class="footer">
+            &copy; 2023 College Name. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

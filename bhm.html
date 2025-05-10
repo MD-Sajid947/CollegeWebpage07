@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor of Hotel Management (BHM) | College Name</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #0c4582; /* Dark red */
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #FFD700; /* Gold */
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(9, 100, 116, 0.614), rgba(6, 82, 105, 0.8)), url('https://example.com/hotel-management.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #FFD700; /* Gold */
+            color: #00588b; /* Dark red */
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #FFD700;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: #FFD700;
+        }
+        
+        /* Course Overview */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #00748b;
+            position: relative;
+            font-size: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #FFD700;
+            margin: 15px auto 0;
+        }
+        
+        .course-overview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .overview-card {
+            flex-basis: 48%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .overview-card h3 {
+            color: #00688b;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        /* Specializations */
+        .specializations {
+            background-color: #FFF8DC; /* Cornsilk */
+            padding: 60px 0;
+        }
+        
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .spec-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .spec-icon {
+            font-size: 3rem;
+            color: #004c8b;
+            margin-bottom: 15px;
+        }
+        
+        .spec-card h3 {
+            color: #006b8b;
+            margin-bottom: 10px;
+        }
+        
+        /* Curriculum */
+        .curriculum {
+            background-color: white;
+        }
+        
+        .semester {
+            margin-bottom: 30px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .semester h3 {
+            background-color: #00648b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .subject {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFD700;
+        }
+        
+        /* Facilities */
+        .facilities {
+            background-color: #FFF8DC;
+        }
+        
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .facility-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .facility-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .facility-content {
+            padding: 20px;
+        }
+        
+        .facility-content h3 {
+            color: #004c8b;
+            margin-bottom: 10px;
+        }
+        
+        /* Eligibility */
+        .eligibility-list {
+            list-style-type: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .eligibility-list li {
+            background-color: white;
+            padding: 15px 20px 15px 60px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .eligibility-list li::before {
+            content: '✓';
+            color: #006d8b;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        /* Career Prospects */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .career-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid #00668b;
+        }
+        
+        .career-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .career-card h3 {
+            color: #00458b;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: #005a8b;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .contact-card {
+            flex-basis: 30%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #004c8b;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 10px;
+            color: #00718b;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-column {
+                flex-basis: 48%;
+            }
+            
+            .contact-card {
+                flex-basis: 48%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .overview-card {
+                flex-basis: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-column {
+                flex-basis: 100%;
+            }
+            
+            .contact-card {
+                flex-basis: 100%;
+            }
+            
+            .container {
+                width: 90%;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">GCMS</div>
+            <nav>
+                <ul>
+                    <li><a target="_blank" href="home.html">HOME</a></li>
+                    <li><a target="_blank" href="about us.html">ABOUT US</a></li>
+                    <li><a target="_blank" href="Courses.html">COURSES</a></li>
+                    <li><a target="_blank" href="events.html">EVENTS</a></li>
+                    <li><a target="_blank" href="location.html">LOCATION</a></li>
+                    <li><a target="_blank" href="placement.html">PLACEMENT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Bachelor of Hotel Management (BHM)</h1>
+            <p>A 4-year professional degree program designed to develop future leaders in the global hospitality industry through comprehensive training in hotel operations, food production, service management, and business administration.</p>
+            <a href="apply now.html" class="btn">Apply Now</a>
+        </div>
+    </section>
+    
+    <!-- Course Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Program Overview</h2>
+            <div class="course-overview">
+                <div class="overview-card">
+                    <h3>About the Program</h3>
+                    <p>The Bachelor of Hotel Management (BHM) is a comprehensive undergraduate program that prepares students for managerial positions in the hospitality industry. The curriculum combines theoretical knowledge with practical training in all core areas of hotel operations including front office, housekeeping, food production, food & beverage service, and hospitality marketing.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Program Highlights</h3>
+                    <ul>
+                        <li>4-year degree program with industry internship</li>
+                        <li>State-of-the-art training kitchens and restaurants</li>
+                        <li>Industry-experienced faculty</li>
+                        <li>International exposure opportunities</li>
+                        <li>100% placement assistance</li>
+                        <li>Specialized certifications included</li>
+                    </ul>
+                </div>
+                <div class="overview-card">
+                    <h3>Learning Outcomes</h3>
+                    <p>Graduates will develop competencies in hotel operations, customer service, event management, food safety, hospitality accounting, and human resource management. The program emphasizes leadership development, problem-solving skills, and cultural sensitivity to prepare students for global hospitality careers.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>International Opportunities</h3>
+                    <p>Our BHM program offers international exchange programs with partner institutions in Europe, Asia, and North America. Students can participate in semester abroad programs, international internships, and global certification courses to enhance their cross-cultural competencies and global employability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Specializations -->
+    <section class="section specializations">
+        <div class="container">
+            <h2 class="section-title">Specialization Options</h2>
+            <div class="spec-grid">
+                <div class="spec-card">
+                    <div class="spec-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food Production</h3>
+                    <p>Master culinary arts, kitchen management, and international cuisines with hands-on training in our professional kitchens.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>Food & Beverage Service</h3>
+                    <p>Learn restaurant operations, bar management, and fine dining service techniques in our training restaurant.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Accommodation Operations</h3>
+                    <p>Specialize in front office management, housekeeping operations, and property management systems.</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Event Management</h3>
+                    <p>Develop expertise in planning and executing conferences, weddings, and corporate events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Curriculum -->
+    <section class="section curriculum">
+        <div class="container">
+            <h2 class="section-title">Curriculum Structure</h2>
+            
+            <div class="semester">
+                <h3>First Year</h3>
+                <div class="subjects">
+                    <div class="subject">Principles of Hospitality Management</div>
+                    <div class="subject">Food Production Fundamentals</div>
+                    <div class="subject">Food & Beverage Service Basics</div>
+                    <div class="subject">Front Office Operations</div>
+                    <div class="subject">Housekeeping Management</div>
+                    <div class="subject">Communication Skills</div>
+                </div>
+            </div>
+            
+            <div class="semester">
+                <h3>Second Year</h3>
+                <div class="subjects">
+                    <div class="subject">Advanced Food Production</div>
+                    <div class="subject">Beverage Management</div>
+                    <div class="subject">Accommodation Management</div>
+                    <div class="subject">Hospitality Accounting</div>
+                    <div class="subject">Hotel Engineering</div>
+                    <div class="subject">Tourism Management</div>
+                </div>
+            </div>
+            
+            <div class="semester">
+                <h3>Third Year</h3>
+                <div class="subjects">
+                    <div class="subject">Hospitality Marketing</div>
+                    <div class="subject">Human Resource Management</div>
+                    <div class="subject">Facility Planning</div>
+                    <div class="subject">Convention Management</div>
+                    <div class="subject">Research Methodology</div>
+                    <div class="subject">Specialization Elective I</div>
+                </div>
+            </div>
+            
+            <div class="semester">
+                <h3>Fourth Year</h3>
+                <div class="subjects">
+                    <div class="subject">Strategic Management</div>
+                    <div class="subject">Revenue Management</div>
+                    <div class="subject">Entrepreneurship Development</div>
+                    <div class="subject">Specialization Elective II</div>
+                    <div class="subject">Project Work</div>
+                    <div class="subject">Industry Internship</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Facilities -->
+    <section class="section facilities">
+        <div class="container">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <div class="facility-img" style="background-image: url('img/TK.jpg');"></div>
+                    <div class="facility-content">
+                        <h3>Training Kitchens</h3>
+                        <p>State-of-the-art culinary labs equipped with modern equipment for Indian and international cuisine training.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-img" style="background-image: url('img/TR.jpg');"></div>
+                    <div class="facility-content">
+                        <h3>Training Restaurant</h3>
+                        <p>Full-service restaurant where students practice food service techniques and customer interaction.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-img" style="background-image: url('img/HSLab.jpg');"></div>
+                    <div class="facility-content">
+                        <h3>Hotel Simulation Lab</h3>
+                        <p>Mock hotel environment with front office, housekeeping, and property management systems.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-img" style="background-image: url('img/Computer\ Labs.jpg');"></div>
+                    <div class="facility-content">
+                        <h3>Computer Labs</h3>
+                        <p>Dedicated labs with hospitality software including Opera PMS, Micros, and Duetto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Eligibility -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Eligibility Criteria</h2>
+            <ul class="eligibility-list">
+                <li>Passed 10+2 or equivalent examination from any recognized board</li>
+                <li>Minimum aggregate marks of 50% (45% for reserved categories)</li>
+                <li>Candidates must have completed 17 years of age at the time of admission</li>
+                <li>No prior hospitality education required</li>
+                <li>Good communication skills in English preferred</li>
+                <li>Personal interview may be conducted for final selection</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Career Prospects -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Career Opportunities</h2>
+            <div class="career-grid">
+                <div class="career-card">
+                    <h3>Hotel Operations</h3>
+                    <p>Roles in front office, housekeeping, food & beverage service, and guest relations at luxury hotels and resorts worldwide.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Food Production</h3>
+                    <p>Chef positions in hotels, restaurants, cruise lines, and catering companies with opportunities for specialization.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Event Management</h3>
+                    <p>Planning and executing weddings, conferences, and corporate events for leading hospitality brands.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Hospitality Marketing</h3>
+                    <p>Sales, digital marketing, and revenue management positions with hotel chains and OTAs.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Cruise Lines</h3>
+                    <p>Opportunities with international cruise companies in food service, guest services, and entertainment.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Entrepreneurship</h3>
+                    <p>Start your own restaurant, catering business, boutique hotel, or food service venture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Our Alumni Speak</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The BHM program gave me the perfect foundation for my career in luxury hospitality. The hands-on training and industry exposure were invaluable.</p>
+                        <p class="testimonial-author">Rahul Sharma</p>
+                        <p class="testimonial-role">Food & Beverage Manager, Taj Hotels</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The international internship opportunity changed my perspective and helped me secure a position with a global hotel chain immediately after graduation.</p>
+                        <p class="testimonial-author">Priya Patel</p>
+                        <p class="testimonial-role">Front Office Supervisor, Marriott International</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The entrepreneurship focus in the final year gave me the confidence to start my own boutique hotel, which is now thriving in Goa.</p>
+                        <p class="testimonial-author">Arjun Mehta</p>
+                        <p class="testimonial-role">Owner, Seaside Boutique Hotel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+91 9876543210</p>
+                    <p>+91 1123456789</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>admissions@GCMS.edu</p>
+                    <p>bhm@GCMS.edu</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Address</h3>
+                    <p>GEORGE COLLEGE OF MANAGEMENT & SCIENCE</p>
+                    <p>123 Hospitality Avenue</p>
+                    <p>City - 110001, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="home.html">HOME</a>
+                <a href="about us.html">ABOUT US</a>
+                <a href="Courses.html">COURSES</a>
+                <a href="placement.html">PLACEMENT</a>
+            </div>
+            <p>&copy; 2025 GEORGE COLLEGE OF MANAGEMENT & SCIENCE. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

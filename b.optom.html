@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor of Optometry (B.Optom) | GCMS</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 5px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), url('https://example.com/optometry-lab.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #0056b3;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+        }
+        
+        /* Course Overview */
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0056b3;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #ffcc00;
+            margin: 15px auto 0;
+        }
+        
+        .course-overview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .overview-card {
+            flex-basis: 48%;
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .overview-card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Curriculum */
+        .curriculum {
+            background-color: #f0f7ff;
+        }
+        
+        .semester {
+            margin-bottom: 30px;
+        }
+        
+        .semester h3 {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .subject {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Eligibility */
+        .eligibility-list {
+            list-style-type: none;
+        }
+        
+        .eligibility-list li {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .eligibility-list li::before {
+            content: '✓';
+            color: #0056b3;
+            font-weight: bold;
+            position: absolute;
+            left: 15px;
+        }
+        
+        /* Career Prospects */
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .career-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .career-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .career-card h3 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .contact-card {
+            flex-basis: 30%;
+            background-color: white;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .overview-card, .contact-card {
+                flex-basis: 100%;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">GCMS</div>
+            <nav>
+                <ul>
+                    <li><a target="_blank" href="home.html">HOME</a></li>
+                    <li><a target="_blank" href="about us.html">ABOUT US</a></li>
+                    <li><a target="_blank" href="Courses.html">COURSES</a></li>
+                    <li><a target="_blank" href="events.html">EVENTS</a></li>
+                    <li><a target="_blank" href="location.html">LOCATION</a></li>
+                    <li><a target="_blank" href="placement.html">PLACEMENT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Bachelor of Optometry (B.Optom)</h1>
+            <p>A comprehensive 4-year undergraduate program designed to train students in eye care, vision science, and ocular disease management.</p>
+            <a href="apply now.html" class="btn">Apply Now</a>
+        </div>
+    </section>
+    
+    <!-- Course Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Course Overview</h2>
+            <div class="course-overview">
+                <div class="overview-card">
+                    <h3>Program Description</h3>
+                    <p>The Bachelor of Optometry (B.Optom) is a professional degree program that prepares students for careers in eye care. The program combines theoretical knowledge with practical training in vision care, ocular disease diagnosis, contact lens fitting, and low vision rehabilitation.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Program Highlights</h3>
+                    <ul>
+                        <li>4-year program with 1-year compulsory internship</li>
+                        <li>State-of-the-art optometry labs and equipment</li>
+                        <li>Clinical training from 2nd year onwards</li>
+                        <li>Industry collaborations for practical exposure</li>
+                        <li>Placement assistance after graduation</li>
+                    </ul>
+                </div>
+                <div class="overview-card">
+                    <h3>Learning Outcomes</h3>
+                    <p>Graduates will be able to perform comprehensive eye examinations, diagnose visual problems, prescribe corrective lenses, detect eye diseases, provide vision therapy, and fit contact lenses. They will also develop skills in patient communication and practice management.</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Duration & Degree</h3>
+                    <p>The B.Optom program spans 4 academic years (8 semesters) followed by a 1-year compulsory rotating internship. Upon successful completion, students are awarded the Bachelor of Optometry degree, making them eligible to register as optometrists with the appropriate regulatory body.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Curriculum -->
+    <section class="section curriculum">
+        <div class="container">
+            <h2 class="section-title">Curriculum</h2>
+            
+            <div class="semester">
+                <h3>First Year</h3>
+                <div class="subjects">
+                    <div class="subject">Anatomy & Physiology</div>
+                    <div class="subject">Geometrical & Physical Optics</div>
+                    <div class="subject">Biochemistry</div>
+                    <div class="subject">General Microbiology</div>
+                    <div class="subject">Communication Skills</div>
+                    <div class="subject">Basic Computer Applications</div>
+                </div>
+            </div>
+            
+            <div class="semester">
+                <h3>Second Year</h3>
+                <div class="subjects">
+                    <div class="subject">Ocular Anatomy & Physiology</div>
+                    <div class="subject">Optometric Optics</div>
+                    <div class="subject">Visual Optics</div>
+                    <div class="subject">Optometric Instruments</div>
+                    <div class="subject">General Pathology</div>
+                    <div class="subject">Pharmacology</div>
+                </div>
+            </div>
+            
+            <div class="semester">
+                <h3>Third Year</h3>
+                <div class="subjects">
+                    <div class="subject">Clinical Optometry</div>
+                    <div class="subject">Ocular Diseases</div>
+                    <div class="subject">Contact Lens</div>
+                    <div class="subject">Binocular Vision</div>
+                    <div class="subject">Low Vision Aids</div>
+                    <div class="subject">Community Optometry</div>
+                </div>
+            </div>
+            
+            <div class="semester">
+                <h3>Fourth Year</h3>
+                <div class="subjects">
+                    <div class="subject">Advanced Clinical Optometry</div>
+                    <div class="subject">Pediatric Optometry</div>
+                    <div class="subject">Geriatric Optometry</div>
+                    <div class="subject">Practice Management</div>
+                    <div class="subject">Research Methodology</div>
+                    <div class="subject">Internship Preparation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Eligibility -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Eligibility Criteria</h2>
+            <ul class="eligibility-list">
+                <li>Passed 10+2 or equivalent examination with Physics, Chemistry, and Biology/Mathematics</li>
+                <li>Minimum aggregate marks of 50% in PCB/PCM (45% for reserved categories)</li>
+                <li>Candidates must have completed 17 years of age at the time of admission</li>
+                <li>Qualifying entrance examination may be required (varies by institution)</li>
+                <li>Medical fitness certificate is mandatory</li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- Career Prospects -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Career Prospects</h2>
+            <div class="career-grid">
+                <div class="career-card">
+                    <h3>Clinical Optometrist</h3>
+                    <p>Work in hospitals, eye clinics, or optical outlets performing eye examinations, prescribing corrective lenses, and detecting eye diseases.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Contact Lens Specialist</h3>
+                    <p>Specialize in fitting and managing contact lenses for patients with various vision needs and ocular conditions.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Low Vision Specialist</h3>
+                    <p>Work with patients who have significant vision impairment, helping them maximize their remaining vision with specialized devices.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Optical Industry Professional</h3>
+                    <p>Work with optical manufacturers in product development, sales, marketing, or training roles.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Academic & Researcher</h3>
+                    <p>Pursue teaching positions in optometry colleges or engage in vision science research.</p>
+                </div>
+                <div class="career-card">
+                    <h3>Entrepreneur</h3>
+                    <p>Start your own optical retail outlet, eye clinic, or specialized vision care center.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <i>📞</i>
+                    <h3>Phone</h3>
+                    <p>+91 9876543210</p>
+                    <p>+91 1123456789</p>
+                </div>
+                <div class="contact-card">
+                    <i>✉️</i>
+                    <h3>Email</h3>
+                    <p>admissions@GCMS.edu</p>
+                    <p>optometry@GCMS.edu</p>
+                </div>
+                <div class="contact-card">
+                    <i>🏫</i>
+                    <h3>Address</h3>
+                    <p>GEORGE COLLEGE OF MANAGEMENT & SCIENCE</p>
+                    <p>123 Medical Campus Road</p>
+                    <p>City - 110001, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="home.html">HOME</a>
+                <a href="about us.html">ABOUT US</a>
+                <a href="Courses.html">COURSES</a>
+                <a href="placement.html">PLACEMENT</a>
+            </div>
+            <p>&copy; 2025 GEORGE COLLEGE OF MANAGEMENT & SCIENCE. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

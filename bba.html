@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBA Program Details | GEORGE COLLEGE OF MANAGEMENT & SCIENCE</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #1a3e72;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #a8c6ff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff6b00;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e05d00;
+        }
+        
+        /* Course Details Section */
+        .course-details {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a3e72;
+            font-size: 32px;
+        }
+        
+        .course-overview {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+        
+        .overview-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .overview-card h3 {
+            color: #1a3e72;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        /* Curriculum Section */
+        .curriculum {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .semester-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .tab-btn:first-child {
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .tab-btn:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .tab-btn.active {
+            background-color: #1a3e72;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .tab-content h3 {
+            color: #1a3e72;
+            margin-bottom: 20px;
+        }
+        
+        .tab-content ul {
+            list-style-position: inside;
+            column-count: 2;
+            column-gap: 30px;
+        }
+        
+        .tab-content li {
+            margin-bottom: 10px;
+        }
+        
+        /* Admission Section */
+        .admission {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .admission-requirements {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        /* Career Section */
+        .career {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .career-opportunities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .career-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            width: calc(33.333% - 20px);
+            min-width: 250px;
+            text-align: center;
+        }
+        
+        .career-card i {
+            font-size: 40px;
+            color: #1a3e72;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            .tab-content ul {
+                column-count: 1;
+            }
+            
+            .career-card {
+                width: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .career-card {
+                width: 100%;
+            }
+            
+            .semester-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                border-radius: 4px !important;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">GCMS</div>
+            <nav>
+                <ul>
+                    <li><a target="_blank" href="home.html">HOME </a></li>
+                    <li><a target="_blank" href="about us.html">ABOUT US</a></li>
+                    <li><a target="_blank" href="Courses.html">COURSES</a></li>
+                    <li><a target="_blank" href="events.html">EVENTS</a></li>
+                    <li><a target="_blank" href="location.html">LOCATION</a></li>
+                    <li><a target="_blank" href="placement.html">PLACEMENT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Bachelor of Business Administration (BBA)</h1>
+            <p>A comprehensive 3-year undergraduate program designed to develop future business leaders with practical skills and theoretical knowledge.</p>
+            <a href="apply now.html" class="btn">Apply Now</a>
+        </div>
+    </section>
+    
+    <!-- Course Details Section -->
+    <section class="course-details">
+        <div class="container">
+            <h2 class="section-title">Program Overview</h2>
+            <div class="course-overview">
+                <div class="overview-card">
+                    <h3>Program Duration</h3>
+                    <p>3 Years (6 Semesters)</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Eligibility</h3>
+                    <p>10+2 with minimum 50% marks in any stream from a recognized board</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Degree Awarded</h3>
+                    <p>Bachelor of Business Administration (BBA)</p>
+                </div>
+            </div>
+            
+            <div class="program-description">
+                <h3>About the Program</h3>
+                <p>The Bachelor of Business Administration (BBA) program at XYZ College is designed to provide students with a strong foundation in business principles and practices. Our curriculum combines theoretical knowledge with practical applications, preparing students for the dynamic business world.</p>
+                <p>The program focuses on developing essential skills in management, leadership, communication, and critical thinking. Students gain exposure to various business functions including marketing, finance, human resources, and operations.</p>
+                <p>With a blend of classroom learning, case studies, industry projects, and internships, our BBA program ensures that graduates are well-equipped to enter the corporate world or pursue higher studies.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Curriculum Section -->
+    <section class="curriculum">
+        <div class="container">
+            <h2 class="section-title">Program Curriculum</h2>
+            
+            <div class="semester-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'sem1')">Semester 1</button>
+                <button class="tab-btn" onclick="openTab(event, 'sem2')">Semester 2</button>
+                <button class="tab-btn" onclick="openTab(event, 'sem3')">Semester 3</button>
+                <button class="tab-btn" onclick="openTab(event, 'sem4')">Semester 4</button>
+                <button class="tab-btn" onclick="openTab(event, 'sem5')">Semester 5</button>
+                <button class="tab-btn" onclick="openTab(event, 'sem6')">Semester 6</button>
+            </div>
+            
+            <div id="sem1" class="tab-content active">
+                <h3>First Semester Courses</h3>
+                <ul>
+                    <li>Principles of Management</li>
+                    <li>Business Mathematics</li>
+                    <li>Financial Accounting</li>
+                    <li>Business Communication</li>
+                    <li>Microeconomics</li>
+                    <li>Computer Applications in Business</li>
+                    <li>Business Ethics</li>
+                </ul>
+            </div>
+            
+            <div id="sem2" class="tab-content">
+                <h3>Second Semester Courses</h3>
+                <ul>
+                    <li>Organizational Behavior</li>
+                    <li>Business Statistics</li>
+                    <li>Cost Accounting</li>
+                    <li>Macroeconomics</li>
+                    <li>Environmental Studies</li>
+                    <li>Business Law</li>
+                    <li>Marketing Management</li>
+                </ul>
+            </div>
+            
+            <div id="sem3" class="tab-content">
+                <h3>Third Semester Courses</h3>
+                <ul>
+                    <li>Human Resource Management</li>
+                    <li>Financial Management</li>
+                    <li>Operations Management</li>
+                    <li>Research Methodology</li>
+                    <li>Management Information Systems</li>
+                    <li>Consumer Behavior</li>
+                    <li>Elective I</li>
+                </ul>
+            </div>
+            
+            <div id="sem4" class="tab-content">
+                <h3>Fourth Semester Courses</h3>
+                <ul>
+                    <li>Business Analytics</li>
+                    <li>Entrepreneurship Development</li>
+                    <li>International Business</li>
+                    <li>Banking and Insurance</li>
+                    <li>Corporate Governance</li>
+                    <li>Elective II</li>
+                    <li>Elective III</li>
+                </ul>
+            </div>
+            
+            <div id="sem5" class="tab-content">
+                <h3>Fifth Semester Courses</h3>
+                <ul>
+                    <li>Strategic Management</li>
+                    <li>Project Management</li>
+                    <li>Digital Marketing</li>
+                    <li>Business Taxation</li>
+                    <li>Elective IV</li>
+                    <li>Elective V</li>
+                    <li>Summer Internship Project</li>
+                </ul>
+            </div>
+            
+            <div id="sem6" class="tab-content">
+                <h3>Sixth Semester Courses</h3>
+                <ul>
+                    <li>Leadership and Change Management</li>
+                    <li>E-Commerce</li>
+                    <li>Business Policy</li>
+                    <li>Elective VI</li>
+                    <li>Comprehensive Viva</li>
+                    <li>Research Project</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Admission Section -->
+    <section class="admission" id="admission">
+        <div class="container">
+            <h2 class="section-title">Admission Process</h2>
+            
+            <div class="admission-requirements">
+                <h3>Admission Requirements</h3>
+                <ul>
+                    <li>Completed application form</li>
+                    <li>10+2 mark sheet and passing certificate (original and photocopy)</li>
+                    <li>Transfer certificate from previous institution</li>
+                    <li>Migration certificate (if applicable)</li>
+                    <li>Character certificate from previous institution</li>
+                    <li>Passport size photographs (4 copies)</li>
+                    <li>Valid ID proof (Aadhar card, passport, etc.)</li>
+                </ul>
+            </div>
+            
+            <div class="selection-process">
+                <h3>Selection Process</h3>
+                <p>Admission to the BBA program is based on:</p>
+                <ol>
+                    <li>Academic performance in 10+2 (minimum 50% aggregate)</li>
+                    <li>Performance in personal interview</li>
+                    <li>Written aptitude test (if applicable)</li>
+                </ol>
+            </div>
+            
+            <div class="important-dates">
+                <h3>Important Dates</h3>
+                <ul>
+                    <li>Application Start Date: April 1, 2025</li>
+                    <li>Last Date for Application: June 15, 2025</li>
+                    <li>Interview Dates: June 20-25, 2025</li>
+                    <li>Commencement of Classes: July 15, 2025</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Career Section -->
+    <section class="career">
+        <div class="container">
+            <h2 class="section-title">Career Opportunities</h2>
+            <p class="section-subtitle">BBA graduates have diverse career options in various sectors:</p>
+            
+            <div class="career-opportunities">
+                <div class="career-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Management Trainee</h3>
+                    <p>Entry-level positions in corporate management programs</p>
+                </div>
+                
+                <div class="career-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Marketing Executive</h3>
+                    <p>Roles in advertising, brand management, and sales</p>
+                </div>
+                
+                <div class="career-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Financial Analyst</h3>
+                    <p>Positions in banking, investment, and financial services</p>
+                </div>
+                
+                <div class="career-card">
+                    <i class="fas fa-users"></i>
+                    <h3>HR Specialist</h3>
+                    <p>Roles in recruitment, training, and employee relations</p>
+                </div>
+                
+                <div class="career-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Business Consultant</h3>
+                    <p>Advisory roles helping organizations improve performance</p>
+                </div>
+                
+                <div class="career-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Higher Studies</h3>
+                    <p>MBA, PGDM, or specialized master's programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p>For more information about the BBA program, please contact:</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Program Coordinator</h3>
+                    <p>Dr. Ramesh Kumar</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> bba@GCMS.edu</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>Admission Office</h3>
+                    <p>GEORGE COLLEGE OF MANAGEMENT & SCIENCE</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 College Road, City - 560001</p>
+                    <p><i class="fas fa-phone"></i> +91 8012345678</p>
+                    <p><i class="fas fa-envelope"></i> admissions@GCMS.edu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="home.html">HOME</a>
+                <a href="about us.html">ABOUT US</a>
+                <a href="Courses.html">COURSES</a>
+                <a href="placement.html">PLACEMENT</a>
+            </div>
+            <p>&copy; 2025 GEORGE COLLEGE OF MANAGEMENT & SCIENCE. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tab buttons
+            tabbuttons = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            
+            // Show the current tab and add active class to the button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
